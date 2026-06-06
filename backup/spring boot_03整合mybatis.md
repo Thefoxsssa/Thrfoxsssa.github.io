@@ -1,13 +1,12 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://Thefoxsssa.github.io/Thrfoxsssa.github.io</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://Thefoxsssa.github.io/Thrfoxsssa.github.io</link></image><lastBuildDate>Sat, 06 Jun 2026 09:37:24 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>spring boot_03整合mybatis</title><link>https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/spring%20boot_03-zheng-he-mybatis.html</link><description># 整合mybatis
+# 整合mybatis
 **在pom文件中导入依赖**
 ```xml
-&lt;dependency&gt;
-            &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;
-            &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;
-            &lt;version&gt;4.0.0&lt;/version&gt;
-            &lt;scope&gt;compile&lt;/scope&gt;
-        &lt;/dependency&gt;
+<dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>4.0.0</version>
+            <scope>compile</scope>
+        </dependency>
 ```
 **在配置文件中配置datasource**
 ```xml
@@ -78,14 +77,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HelloController {
-    @RequestMapping('/hello')
+    @RequestMapping("/hello")
     public String hello(){
-        return 'hello';
+        return "hello";
     }
     @Autowired
     UserService userService;
 
-    @RequestMapping('/getUserById')
+    @RequestMapping("/getUserById")
     public User getUserById(@RequestParam int id){
         return userService.getUserById(id);
     }
@@ -120,10 +119,10 @@ public class User {
 
     @Override
     public String toString() {
-        return 'User{' +
-                'userId=' + userId +
-                ', userName='' + userName + '\'' +
-                ', password='' + password + '\'' +
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 
@@ -196,29 +195,3 @@ public class UserServiceImpl implements UserService {
 
 
 
-。</description><guid isPermaLink="true">https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/spring%20boot_03-zheng-he-mybatis.html</guid><pubDate>Sat, 06 Jun 2026 09:37:01 +0000</pubDate></item><item><title>spring boot_02配置文件</title><link>https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/spring%20boot_02-pei-zhi-wen-jian.html</link><description># 配置文件
-**properties配置文件**
-使用ide自动创建的spring boot 项目将会自动生成application.properties文件
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/595978d450d4468f95f5295e37f2f323.png)
-在项目启动后可以看到tomcat默认的端口和虚拟目录，想要修改就可以在配置文件中修改
-```properties
-server.port=9090
-server.servlet.context-path=/start
-```
-再次启动后会发现端口和虚拟路径发生了变化
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/1f25304b7b074bd98aadee285186ffcc.png)
-**yaml配置文件**
-yaml配置文件有两个后缀分别是yml和yaml两者没有本质区别,区别于properties配置文件，yml格式是靠缩进和':'区分
-```yml
-server:
-  port: 9091
-  servlet:
-    context-path: '/start2'
-```
-再次启动
-![在这里插入图片描述](https://i-blog.csdnimg.cn/direct/e092b363cc9748058c148def501b92d8.png)
-在实际开发中更加常用yml配置文件，yml文件可读性更强层级更加清晰。</description><guid isPermaLink="true">https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/spring%20boot_02-pei-zhi-wen-jian.html</guid><pubDate>Sat, 06 Jun 2026 08:32:56 +0000</pubDate></item><item><title>spring boot_01创建项目</title><link>https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/spring%20boot_01-chuang-jian-xiang-mu.html</link><description>最近做项目深深感到基础不足故滚回来复习spring boot 和vue
-# 创建工程
-****
-**导入jar包**
-在maven中的pom文件导入此坐标，或者在ide中选择创建spring boot工程选择spring boot 版本和spring web选项选择create即可。</description><guid isPermaLink="true">https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/spring%20boot_01-chuang-jian-xiang-mu.html</guid><pubDate>Sat, 06 Jun 2026 08:30:25 +0000</pubDate></item><item><title>测试</title><link>https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/ce-shi.html</link><description>[测试](https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html)。</description><guid isPermaLink="true">https://Thefoxsssa.github.io/Thrfoxsssa.github.io/post/ce-shi.html</guid><pubDate>Sat, 06 Jun 2026 08:07:41 +0000</pubDate></item></channel></rss>
